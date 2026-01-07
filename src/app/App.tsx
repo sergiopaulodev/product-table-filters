@@ -2,8 +2,7 @@ import { productsMock } from "../domain/products.mock";
 import { useProductFiltersFromUrl } from "../filters/useProductFiltersFromUrl";
 import { applyProductFilters } from "../filters/applyProductFilters";
 import { ProductList } from "../components/ProductList";
-
-
+import { EmptyState } from "../components/EmptyState";
 
 const App = () => {
     const filters = useProductFiltersFromUrl();
@@ -18,7 +17,7 @@ const App = () => {
             <h1>Product</h1>
 
             {filteredProducts.length === 0 ? (
-                <p>No products match the selected filters.</p>
+                <EmptyState message="No products match the selected filters." />
 
             ) : (
                 <ProductList products={filteredProducts} />
