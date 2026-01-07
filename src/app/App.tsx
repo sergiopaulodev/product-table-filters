@@ -16,7 +16,14 @@ const App = () => {
     return (
         <div>
             <h1>Product</h1>
-            <ProductList products={filteredProducts} />
+
+            {filteredProducts.length === 0 ? (
+                <p>No products match the selected filters.</p>
+
+            ) : (
+                <ProductList products={filteredProducts} />
+            )}
+
         </div>
     );
 };
