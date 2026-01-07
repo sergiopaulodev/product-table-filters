@@ -6,12 +6,27 @@ type ProductListProps = {
 
 export const ProductList = ({ products }: ProductListProps) => {
     return (
-        <ul>
-            {products.map(product => (
-                <li key={product.id}>
-                    {product.name}
-                </li>
-            ))}
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Subcategory</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {products.map(product => (
+                    <tr key={product.id}>
+                        <td>{product.name}</td> 
+                        <td>{product.categoryId}</td> 
+                        <td>{product.subcategoryId}</td> 
+                        <td>{product.stock}</td> 
+                    </tr>
+                ))}
+            </tbody>
+            
+        </table>
     );
 };
