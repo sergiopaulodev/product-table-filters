@@ -1,15 +1,15 @@
-export type Category = "electronics" | "furniture";
+export type CategoryId = "electronics" | "furniture";
 
-export type Subcategory = 
+export type SubcategoryId = 
     | "peripherals"
     | "computers"
     | "chairs"
     | "tables";
 
 export type Product = {
-    id: string
-    name: string
-    category: Category
-    subcategory: Subcategory
-    inStock: boolean
+    id: string;
+    name: string;
+    categoryId: CategoryId;
+    subcategoryId: SubcategoryId;
+    stock: number;
 };

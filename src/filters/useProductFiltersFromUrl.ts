@@ -1,21 +1,21 @@
 import { useSearchParams } from 'react-router-dom';
 import type { ParsedProductFilters, RawProductFilters } from './product-filters';
-import type { Category, Subcategory } from "../domain/product";
+import type { CategoryId, SubcategoryId } from "../domain/product";
 
-const isValidCategory = (value: string): value is Category => {
+const isValidCategory = (value: string): value is CategoryId => {
     return value === "electronics" || value === "furniture";
 };
 
 const isValidSubcategory = (
     value: string,
-    category: Category
-): value is Subcategory => {
-    const map: Record<Category, Subcategory[]> = {
+    category: CategoryId
+): value is SubcategoryId => {
+    const map: Record<CategoryId, SubcategoryId[]> = {
         electronics: ["peripherals", "computers"],
         furniture: ["chairs", "tables"],
     };
 
-    return map[category].includes(value as Subcategory);
+    return map[category].includes(value as SubcategoryId);
 }
 
 const parseRawFilters = (

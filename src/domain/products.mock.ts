@@ -4,15 +4,15 @@ export const productsMock: Product[] = [
   {
     id: "p1",
     name: "Mechanical Keyboard",
-    category: "electronics",
-    subcategory: "peripherals",
-    inStock: true,
+    categoryId: "electronics",
+    subcategoryId: "peripherals",
+    stock: 10,
   },
   {
     id: "p2",
     name: "Office Chair",
-    category: "furniture",
-    subcategory: "chairs",
-    inStock: false,
+    categoryId: "furniture",
+    subcategoryId: "chairs",
+    stock: 0,
   },
 ];
