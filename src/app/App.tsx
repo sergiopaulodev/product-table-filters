@@ -3,7 +3,8 @@ import { useProductFiltersFromUrl } from "../filters/useProductFiltersFromUrl";
 import { applyProductFilters } from "../filters/applyProductFilters";
 import { ProductList } from "../components/ProductList";
 import { EmptyState } from "../components/EmptyState";
-import { describeActiveFilters } from "../filters/describeActiveFilters";
+import { ActiveFiltersSummary } from "../components/ActiveFiltersSummary";
+
 
 const App = () => {
     const filters = useProductFiltersFromUrl();
@@ -13,15 +14,12 @@ const App = () => {
         filters
     );
 
-    const activeFiltersDescription = describeActiveFilters(filters);
-
     return (
         <div>
             <h1>Product</h1>
 
-            {activeFiltersDescription && (
-                <p>{activeFiltersDescription}</p>
-            )}
+            <ActiveFiltersSummary filters={filters} />
+
 
             {filteredProducts.length === 0 ? (
                 <EmptyState message="No products match the selected filters." />
