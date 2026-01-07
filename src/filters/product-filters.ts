@@ -1,8 +1,8 @@
-import type { Category, Subcategory } from "../domain/product";
+import type { CategoryId, SubcategoryId } from "../domain/product";
 
 export type ProductFilters = {
-    category?: Category;
-    subcategory?: Subcategory;
+    category?: CategoryId;
+    subcategory?: SubcategoryId;
     inStock?: boolean;
 };
 
