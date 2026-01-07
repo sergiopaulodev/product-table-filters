@@ -5,12 +5,20 @@ export const applyProductFilters = (
     products: Product[],
     filters: ParsedProductFilters
 ): Product[] => {
-    if(!filters.category) {
-        return products;
+    let result = products;
+
+    if(filters.category) {
+        result = result.filter(
+            (product) => product.categoryId === filters.category
+        );
     }
 
-    return products.filter(
-        (product) => product.categoryId === filters.category
-    );
+    if (filters.subcategory) {
+        result = result.filter(
+            (product) => product.subcategoryId === filters.subcategory
+        );
+    }
+
+    return result;
 
 };
