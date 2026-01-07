@@ -19,6 +19,12 @@ export const applyProductFilters = (
         );
     }
 
+    if (filters.inStock) {
+        result = result.filter(
+            (product) => product.stock > 0
+        );
+    }
+
     return result;
 
 };
