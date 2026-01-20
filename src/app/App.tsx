@@ -4,7 +4,7 @@ import { applyProductFilters } from "../filters/applyProductFilters";
 import { ProductList } from "../components/ProductList";
 import { EmptyState } from "../components/EmptyState";
 import { ActiveFiltersSummary } from "../components/ActiveFiltersSummary";
-
+import { FiltersPanel } from "../ui/FiltersPanel";
 
 const App = () => {
     const filters = useProductFiltersFromUrl();
@@ -17,6 +17,8 @@ const App = () => {
     return (
         <div>
             <h1>Product</h1>
+
+            <FiltersPanel/>
 
             <ActiveFiltersSummary filters={filters} />
 
